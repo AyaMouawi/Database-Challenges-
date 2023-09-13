@@ -4,5 +4,23 @@ CREATE DATABASE schoolDB;
 USE schoolDB;
 SHOW DATABASES;
 
+. Challenge 2 :
 
+USE schoolDB;
 
+CREATE TABLE teachers (
+    ->     id INT PRIMARY KEY,
+    ->     first_name VARCHAR(255),
+    ->     last_name VARCHAR(255),
+    ->     subject VARCHAR(255)
+    -> );
+
+SHOW TABLES;
+DESCRIBE teachers;
+
+ INSERT INTO teachers(id, first_name, last_name, subject)
+    -> VALUES
+    ->     (1, 'John', 'Doe', 'Math'),
+    ->     (2, 'Jane', 'Smith', 'Science');
+
+ DESCRIBE teachers;   
