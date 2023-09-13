@@ -1,10 +1,14 @@
 .Challenge 1 :
+--------------
 
 CREATE DATABASE schoolDB;
 USE schoolDB;
 SHOW DATABASES;
 
+--------------------------------------------------------------------------------------------------------------------------------------
+
 . Challenge 2 :
+---------------
 
 USE schoolDB;
 
@@ -25,12 +29,18 @@ DESCRIBE teachers;
 
  DESCRIBE teachers;  
 
+ --------------------------------------------------------------------------------------------------------------------------------------
+
  .Challenge 3 :
+ --------------
 
  SELECT * FROM teachers;
  SELECT first_name, subject FROM teachers;
 
+ --------------------------------------------------------------------------------------------------------------------------------------
+
 .Challenge 4 :
+--------------
 
 CREATE TABLE students(
     ->     id INT PRIMARY KEY,
@@ -44,6 +54,7 @@ INSERT INTO students(id, first_name, last_name, teacher_id)
     ->        (2, 'Bob', 'Johnson', 2);
 
 a) INNER JOIN: 
+   -----------
 
  SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
     ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
@@ -51,6 +62,7 @@ a) INNER JOIN:
     -> INNER JOIN teachers ON students.teacher_id = teachers.id;
 
 b) LEFT OUTER JOIN:
+   ----------------
 
 SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
     ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
@@ -59,6 +71,7 @@ SELECT students.first_name AS student_first_name, students.last_name AS student_
 
 
 c) RIGHT OUTER JOIN:
+   -----------------
 
 SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
     ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
@@ -67,7 +80,7 @@ SELECT students.first_name AS student_first_name, students.last_name AS student_
 
 
 d) FULL OUTER JOIN:
-
+  -----------------
 SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
     ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
     -> FROM students
@@ -78,8 +91,10 @@ SELECT students.first_name AS student_first_name, students.last_name AS student_
     -> FROM students
     -> RIGHT JOIN teachers ON students.teacher_id = teachers.id;
 
+--------------------------------------------------------------------------------------------------------------------------------------
 
 .Challenge 5 :
+--------------
 
  CREATE TABLE Authors (
     ->    author_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,5 +118,5 @@ SELECT students.first_name AS student_first_name, students.last_name AS student_
 
      SHOW TABLES;
 
-     
+
 
