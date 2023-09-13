@@ -30,4 +30,54 @@ DESCRIBE teachers;
  SELECT * FROM teachers;
  SELECT first_name, subject FROM teachers;
 
- 
+.Challenge 4 :
+
+CREATE TABLE students(
+    ->     id INT PRIMARY KEY,
+    ->     first_name VARCHAR(50),
+    ->     last_name VARCHAR(50),
+    ->     teacher_id INT
+    -> );
+
+INSERT INTO students(id, first_name, last_name, teacher_id)
+    -> VALUES (1, 'Alice', 'Brown', 1),
+    ->        (2, 'Bob', 'Johnson', 2);
+
+a) INNER JOIN: 
+
+ SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
+    ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
+    -> FROM students
+    -> INNER JOIN teachers ON students.teacher_id = teachers.id;
+
+b) LEFT OUTER JOIN:
+
+SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
+    ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
+    -> FROM students
+    -> LEFT JOIN teachers ON students.teacher_id = teachers.id;
+
+
+c) RIGHT OUTER JOIN:
+
+SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
+    ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
+    -> FROM students
+    -> RIGHT JOIN teachers ON students.teacher_id = teachers.id;
+
+
+d) FULL OUTER JOIN:
+
+SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
+    ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
+    -> FROM students
+    -> LEFT JOIN teachers ON students.teacher_id = teachers.id
+    -> UNION ALL
+    -> SELECT students.first_name AS student_first_name, students.last_name AS student_last_name,
+    ->        teachers.first_name AS teacher_first_name, teachers.last_name AS teacher_last_name
+    -> FROM students
+    -> RIGHT JOIN teachers ON students.teacher_id = teachers.id;
+
+
+    
+
