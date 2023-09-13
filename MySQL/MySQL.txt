@@ -23,4 +23,11 @@ DESCRIBE teachers;
     ->     (1, 'John', 'Doe', 'Math'),
     ->     (2, 'Jane', 'Smith', 'Science');
 
- DESCRIBE teachers;   
+ DESCRIBE teachers;  
+
+ .Challenge 3 :
+
+ SELECT * FROM teachers;
+ SELECT first_name, subject FROM teachers;
+
+ 
