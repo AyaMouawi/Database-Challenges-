@@ -1,0 +1,8 @@
+.Challenge 1 :
+
+CREATE DATABASE schoolDB;
+USE schoolDB;
+SHOW DATABASES;
+
+
+
