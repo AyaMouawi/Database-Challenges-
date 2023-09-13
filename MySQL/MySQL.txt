@@ -79,5 +79,29 @@ SELECT students.first_name AS student_first_name, students.last_name AS student_
     -> RIGHT JOIN teachers ON students.teacher_id = teachers.id;
 
 
-    
+.Challenge 5 :
+
+ CREATE TABLE Authors (
+    ->    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->    full_name VARCHAR(100),
+    ->    birthdate DATE
+    -> );
+
+ CREATE TABLE Publishers (
+    ->    publisher_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->    name VARCHAR(100)
+    -> );
+
+ CREATE TABLE Books (
+    ->    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->    title VARCHAR(100),
+    ->    author_id INT,
+    ->    publisher_id INT,
+    ->    FOREIGN KEY (author_id) REFERENCES Authors(author_id),
+    ->    FOREIGN KEY (publisher_id) REFERENCES Publishers(publisher_id)
+    -> );
+
+     SHOW TABLES;
+
+     
 
