@@ -2,18 +2,17 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-const cors = require ("cors");
 
-app.use(express.urlencoded({ extended : true}));
-app.use(express.json());
+const cors = require("cors");
 app.use(cors());
 
-app.get("/", (req, res) =>{
-    console.log(`Listening at http://localhost:${port}`);
-    res.send("This is working!");
+
+app.get("/api", (req, res) => {
+  console.log(`Received a request at http://localhost:${port}/api`);
+  res.send("This is working!");
 });
 
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
 
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
